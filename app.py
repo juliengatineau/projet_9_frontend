@@ -82,7 +82,7 @@ def serve_image(image_type, filename):
 # Index page
 @app.route('/')
 def index():
-    return render_template('index.html', image_ids=image_ids, image_names=image_names)
+    return render_template('index.html', image_source_ids=image_source_ids, image_source_names=image_source_names, image_pres_names=image_pres_names, image_pres_mask_names=image_pres_mask_names)
 
 
 # --------------------------------------------------------------------
