@@ -53,30 +53,21 @@ image_ids, image_names = extract_image_ids()
 
 app = Flask(__name__)
 
-@app.route('/images/pres/<path:filename>')
-def serve_pres_image(filename):
-    return send_from_directory(PRES_DIR, filename)
-
-@app.route('/images/pres_mask/<path:filename>')
-def serve_pres_mask_image(filename):
-    return send_from_directory(PRES_MASK_DIR, filename)
-
-# Route to serve frontend images
-@app.route('/images/source/<path:filename>')
-def serve_frontend_image(filename):
-    return send_from_directory(SOURCE_DIR, filename)
-
-# Route to serve frontend masks
-@app.route('/images/masque/<path:filename>')
-def serve_frontend_mask(filename):
-    return send_from_directory(MASK_DIR, filename)
-
-# Route to serve backend generated images
-@app.route('/images/pred/<path:filename>')
-def serve_backend_image(filename):
-    return send_from_directory(PRED_DIR, filename)
-
-# Route to serve backend generated images
+@app.route('/images/<image_type>/<path:filename>')
+def serve_image(image_type, filename):
+    if image_type == 'pres':
+        directory = PRES_DIR
+    elif image_type == 'pres_mask':
+        directory = PRES_MASK_DIR
+    elif image_type == 'source':
+        directory = SOURCE_DIR
+    elif image_type == 'masque':
+        directory = MASK_DIR
+    elif image_type == 'pred':
+        directory = PRED_DIR
+    else:
+        return "Invalid image type", 404
+    return send_from_directory(directory, filename)
 
 
 

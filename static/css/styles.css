@@ -69,6 +69,26 @@ ul.image, ul.pres{
     margin-right: 0;
 }
 
+ul.categories li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+ul.categories li span {
+    flex: 1;
+    text-align: left;
+}
+
+ul.categories li span:nth-child(2) {
+    text-align: center;
+}
+
+ul.categories li span:nth-child(3) {
+    text-align: right;
+}
+
 h3 {
     margin: 2rem 0 1rem;
     font-size: 1.5rem;

@@ -15,7 +15,7 @@
         <ul class="pres">
         {% for image_name in image_names %}
             <li id="image-{{ loop.index }}">
-                <img src="{{ url_for('serve_pres_image', filename=image_name) }}" alt="Image">
+                <img src="{{ url_for('serve_image', image_type='pres', filename=image_name) }}" alt="Image">
             </li>
         {% endfor %}
         <div class = "clear"></div>
@@ -24,7 +24,7 @@
        <ul class="pres">
         {% for image_name in image_names %}
             <li id="image-{{ loop.index }}">
-                <img src="{{ url_for('serve_pres_mask_image', filename=image_name) }}" alt="Image">
+                <img src="{{ url_for('serve_image', image_type='pres_mask', filename=image_name) }}" alt="Image">
             </li>
         {% endfor %}
             <div class = "clear"></div>
@@ -33,29 +33,45 @@
        <h3>Categories</h3>
 
        <ul class="categories">
-           <li>1 | Blue    :   Void</li>
-           <li>2 | Green   :   Flat</li>
-           <li>3 | Red     :   Construction</li>
-           <li>4 | Cyan    :   Object</li>
-           <li>5 | Magenta :   Nature</li>
-           <li>6 | Yellow  :   Sky</li>
-           <li>7 | Black   :   Human</li>
-           <li>8 | White   :   Vehicle</li>
-         </ul>
+        <li>
+            <span>1</span> <span>Blue</span> <span>Void</span>
+        </li>
+        <li>
+            <span>2</span> <span>Green</span> <span>Flat</span>
+        </li>
+        <li>
+            <span>3</span> <span>Red</span> <span>Construction</span>
+        </li>
+        <li>
+            <span>4</span> <span>Cyan</span> <span>Object</span>
+        </li>
+        <li>
+            <span>5</span> <span>Magenta</span> <span>Nature</span>
+        </li>
+        <li>
+            <span>6</span> <span>Yellow</span> <span>Sky</span>
+        </li>
+        <li>
+            <span>7</span> <span>Black</span> <span>Human</span>
+        </li>
+        <li>
+            <span>8</span> <span>White</span> <span>Vehicle</span>
+        </li>
+    </ul>
 
     </section>
 
 
 
-    <section class="pred"">
+    <section class="pred-form">
         <h1><p>Image segmentation</p></h1>
 
         <ul class="image">
-            {% for image_name in image_names %}
-                <li id="image-{{ loop.index }}">
-                    <img src="{{ url_for('serve_frontend_image', filename=image_name) }}" alt="Image">
-                </li>
-            {% endfor %}
+        {% for image_name in image_names %}
+            <li id="image-{{ loop.index }}">
+                <img src="{{ url_for('serve_image', image_type='source', filename=image_name) }}" alt="Image">
+            </li>
+        {% endfor %}
         </ul>
 
         <ul class="num_id">
