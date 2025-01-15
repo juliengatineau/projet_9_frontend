@@ -51,11 +51,8 @@ h1 + p {
     margin: 1rem 0 3rem;
 }
 
-ul.image, ul.pres{
+ul.pres{
     width: 70%;
-    height: 35vw;
-    max-height: 420px;
-    position: relative;
     margin: 5rem 15% 0;
 }
 
@@ -72,6 +69,7 @@ ul.image, ul.pres{
 ul.pres + ul.pres {
     margin-top : 1rem;
 }
+
 ul.categories {
     width: 20rem;
     margin: 3rem calc(50% - 10rem) 7rem;
@@ -96,6 +94,14 @@ h3 {
 
 .pred-form {
     padding-bottom: 7rem;
+}
+
+ul.image {
+    width: 70%;
+    height: 35vw;
+    max-height: 420px;
+    position: relative;
+    margin: 5rem 15% 0;
 }
 
 .image img {
