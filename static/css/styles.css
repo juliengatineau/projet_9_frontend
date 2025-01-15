@@ -61,14 +61,17 @@ ul.image, ul.pres{
 
 .pres li {
     float:left;
-    width: 28%;
-    margin-right: 8%;
+    width: 30%;
+    margin-right: 5%;
 }
 
-.pres li:last-child {
+.pres li:last-of-type {
     margin-right: 0;
 }
 
+ul.pres + ul.pres {
+    margin-top : 1rem;
+}
 ul.categories {
     width: 20rem;
     margin: 3rem calc(50% - 10rem) 7rem;
