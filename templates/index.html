@@ -10,10 +10,10 @@
 
     <section class="header">
         <h1><p>Dataset presentation</p></h1>
-        <p>Here are some exemples of the images in the Cityscapes dataset. These images are streetviews taken from a car in various german cities. Each image will be segmented in 8 categories</p>
+        <p>Here are some exemples of the images in the Cityscapes dataset.<br> These images are street views taken from a car in various german cities. <br>Each image will be segmented in 8 categories</p>
 
         <ul class="pres">
-        {% for image_name in image_names %}
+        {% for image_name in image_pres_names %}
             <li id="image-{{ loop.index }}">
                 <img src="{{ url_for('serve_image', image_type='pres', filename=image_name) }}" alt="Image">
             </li>
@@ -22,7 +22,7 @@
        </ul>
 
        <ul class="pres">
-        {% for image_name in image_names %}
+        {% for image_name in image_pres_mask_names %}
             <li id="image-{{ loop.index }}">
                 <img src="{{ url_for('serve_image', image_type='pres_mask', filename=image_name) }}" alt="Image">
             </li>
@@ -67,7 +67,7 @@
         <h1><p>Image segmentation</p></h1>
 
         <ul class="image">
-        {% for image_name in image_names %}
+        {% for image_name in image_source_names %}
             <li id="image-{{ loop.index }}">
                 <img src="{{ url_for('serve_image', image_type='source', filename=image_name) }}" alt="Image">
             </li>
@@ -75,7 +75,7 @@
         </ul>
 
         <ul class="num_id">
-            {% for image_id in image_ids %}
+            {% for image_id in image_source_ids %}
             <li id="num-{{ loop.index }}" onmouseover="highlightImage({{ loop.index }})" onclick="submitForm({{ loop.index }})">
                 Image {{ image_id }}
             </li>

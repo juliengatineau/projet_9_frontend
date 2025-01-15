@@ -69,6 +69,11 @@ ul.image, ul.pres{
     margin-right: 0;
 }
 
+ul.categories {
+    width: 20rem;
+    margin: 3rem calc(50% - 10rem) 7rem;
+}
+
 ul.categories li {
     display: flex;
     justify-content: space-between;
@@ -81,17 +86,13 @@ ul.categories li span {
     text-align: left;
 }
 
-ul.categories li span:nth-child(2) {
-    text-align: center;
-}
-
-ul.categories li span:nth-child(3) {
-    text-align: right;
-}
-
 h3 {
     margin: 2rem 0 1rem;
     font-size: 1.5rem;
+}
+
+.pred-form {
+    padding-bottom: 7rem;
 }
 
 .image img {

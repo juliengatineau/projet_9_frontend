@@ -17,6 +17,12 @@ logging.basicConfig(level=logging.DEBUG)
 # Path to the images directory
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 IMAGES_DIR = os.path.join(ROOT_DIR, 'static/images')
+
+# create directories
+os.makedirs(os.path.join(IMAGES_DIR, 'pred'), exist_ok=True)
+os.makedirs(os.path.join(IMAGES_DIR, 'resize'), exist_ok=True)
+
+# image directories
 SOURCE_DIR = os.path.join(IMAGES_DIR, 'source')
 MASK_DIR = os.path.join(IMAGES_DIR, 'masque')
 PRED_DIR = os.path.join(IMAGES_DIR, 'pred')
@@ -33,10 +39,10 @@ MODEL_INPUT_HEIGHT = 520
 
 
 # Extract image IDs and names from filenames in the leftimg directory
-def extract_image_ids():
+def extract_image_ids(folder):
     image_ids = []
     image_names = []
-    for filename in os.listdir(SOURCE_DIR):
+    for filename in os.listdir(folder):
         if filename.endswith('.png'):
             image_names.append(filename)
             match = re.search(r'_(\d{6})_leftImg8bit', filename)
@@ -44,7 +50,9 @@ def extract_image_ids():
                 image_ids.append(int(match.group(1)))
     return image_ids, image_names
 
-image_ids, image_names = extract_image_ids()
+image_source_ids, image_source_names = extract_image_ids(SOURCE_DIR)
+image_pres_ids, image_pres_names = extract_image_ids(PRES_DIR)
+image_pres_mask_ids, image_pres_mask_names = extract_image_ids(PRES_MASK_DIR)
 
 
 # --------------------------------------------------------------------
