@@ -48,6 +48,11 @@ def extract_image_ids(folder):
             match = re.search(r'_(\d{6})_leftImg8bit', filename)
             if match:
                 image_ids.append(int(match.group(1)))
+
+    # Sort lists
+    image_names.sort()
+    image_ids.sort()
+
     return image_ids, image_names
 
 image_source_ids, image_source_names = extract_image_ids(SOURCE_DIR)
