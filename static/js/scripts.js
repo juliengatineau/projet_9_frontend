@@ -12,10 +12,8 @@ function highlightImage(index) {
     const imageElement = document.getElementById('image-' + index);
     if (imageElement) {
         console.log('Adding highlight to image with index:', index);
-        setTimeout(() => {
-            imageElement.classList.add('highlight');
-            console.log('Highlight class added to image with index:', index);
-        }, 0);
+        imageElement.classList.add('highlight');
+        console.log('Highlight class added to image with ID:', imageElement.id);
     } else {
         console.error('Image element not found for index:', index);
     }
@@ -37,7 +35,22 @@ function highlightImage(index) {
     }
 }
 
+// Observer les modifications du DOM
+const observer = new MutationObserver(mutations => {
+    mutations.forEach(mutation => {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+            console.log('Class attribute changed:', mutation.target);
+        }
+    });
+});
 
+// Configurer l'observateur pour surveiller les modifications des attributs
+const config = { attributes: true, childList: false, subtree: true };
+
+// Commencer à observer les éléments
+document.querySelectorAll('.image li').forEach(image => {
+    observer.observe(image, config);
+});
 // Activer le premier élément au lancement de la page
 document.addEventListener('DOMContentLoaded', () => {
     highlightImage(1);
