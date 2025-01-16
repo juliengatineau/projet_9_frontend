@@ -152,4 +152,5 @@ def display():
     return render_template('display.html', image_id=image_id, real_image=real_image_filename, real_mask=real_mask_filename, predicted_mask=predicted_mask_filename)
 
 if __name__ == '__main__':
-    app.run(debug=True, port=8000)
+    port = int(os.environ.get('PORT', 8000))
+    app.run(host='0.0.0.0', port=port, debug=True)
