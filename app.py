@@ -23,7 +23,8 @@ os.makedirs(os.path.join(IMAGES_DIR, 'pred'), exist_ok=True)
 os.makedirs(os.path.join(IMAGES_DIR, 'resize'), exist_ok=True)
 
 # image directories
-SOURCE_DIR = os.path.join(IMAGES_DIR, 'source')
+SOURCE_DIR = os.path.join(IMAGES_DIR, 'source')git add .
+
 MASK_DIR = os.path.join(IMAGES_DIR, 'masque')
 PRED_DIR = os.path.join(IMAGES_DIR, 'pred')
 RESIZE_DIR = os.path.join(IMAGES_DIR, 'resize')
