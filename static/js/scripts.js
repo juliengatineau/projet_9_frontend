@@ -1,4 +1,6 @@
 function highlightImage(index) {
+    console.log('Highlighting image with index:', index);
+
     // Retirer la classe 'highlight' de toutes les images
     const images = document.querySelectorAll('.image li');
     images.forEach(image => {
@@ -6,7 +8,12 @@ function highlightImage(index) {
     });
 
     // Ajouter la classe 'highlight' à l'image correspondante
-    document.getElementById('image-' + index).classList.add('highlight');
+    const imageElement = document.getElementById('image-' + index);
+    if (imageElement) {
+        imageElement.classList.add('highlight');
+    } else {
+        console.error('Image element not found for index:', index);
+    }
 
     // Retirer la classe 'active' de tous les éléments de la liste
     const items = document.querySelectorAll('.num_id li');
@@ -15,7 +22,12 @@ function highlightImage(index) {
     });
 
     // Ajouter la classe 'active' à l'élément de la liste correspondant
-    document.getElementById('num-' + index).classList.add('active');
+    const itemElement = document.getElementById('num-' + index);
+    if (itemElement) {
+        itemElement.classList.add('active');
+    } else {
+        console.error('Item element not found for index:', index);
+    }
 }
 
 
