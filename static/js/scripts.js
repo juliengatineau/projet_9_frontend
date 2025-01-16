@@ -10,6 +10,7 @@ function highlightImage(index) {
     // Ajouter la classe 'highlight' à l'image correspondante
     const imageElement = document.getElementById('image-' + index);
     if (imageElement) {
+        console.log('Adding highlight to image with index:', index);
         imageElement.classList.add('highlight');
     } else {
         console.error('Image element not found for index:', index);
