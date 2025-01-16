@@ -5,6 +5,7 @@ function highlightImage(index) {
     const images = document.querySelectorAll('.image li');
     images.forEach(image => {
         image.classList.remove('highlight');
+        console.log('Removing highlight from image with index:', index);
     });
 
     // Ajouter la classe 'highlight' à l'image correspondante
