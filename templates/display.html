@@ -12,17 +12,17 @@
 
     <section class="real">
         <h2>Real Image</h2>
-        <img src="{{ url_for('serve_image', image_type='source', filename=image_name) }}" alt="Real Image">
+        <img src="{{ url_for('serve_image', image_type='source', filename=real_image) }}" alt="Real Image">
     </section>
 
     <section class="seg">
         <h2>Real segmentation</h2>
-        <img src="{{ url_for('serve_image', image_type='masque', filename=image_name) }}" alt="Real Mask">
+        <img src="{{ url_for('serve_image', image_type='masque', filename=real_mask) }}" alt="Real Mask">
     </section>
 
     <section class="pred">
         <h2>Predicted segmentation</h2>
-        <img src="{{ url_for('serve_image', image_type='pred', filename=image_name) }}" alt="Predicted Mask">
+        <img src="{{ url_for('serve_image', image_type='pred', filename=predicted_mask) }}" alt="Predicted Mask">
     </section>
     <div class="clear"></div>
     
