@@ -24,15 +24,18 @@ function highlightImage(index) {
 //    highlightImage(1);
 //});
 
-const imageElement = document.getElementById('image-1');
-if (imageElement) {
-    console.log('Testing highlight on image with ID:', imageElement.id);
-    imageElement.classList.add('highlight');
-    setTimeout(() => {
-        imageElement.classList.remove('highlight');
-    }, 2000);
-} else {
-    console.error('Image element not found for ID: image-1');
+// Fonction pour tester la mise en surbrillance
+function testHighlight() {
+    const imageElement = document.getElementById('image-1');
+    if (imageElement) {
+        console.log('Testing highlight on image with ID:', imageElement.id);
+        imageElement.classList.add('highlight');
+        setTimeout(() => {
+            imageElement.classList.remove('highlight');
+        }, 2000);
+    } else {
+        console.error('Image element not found for ID: image-1');
+    }
 }
 
 
