@@ -32,7 +32,7 @@ PRES_DIR = os.path.join(IMAGES_DIR, 'pres')
 PRES_MASK_DIR = os.path.join(IMAGES_DIR, 'pres_mask')
 
 # Path to the generated directory in the backend
-PREDICT_API_URL = 'https://projet9backend-fyasgqdcgnewhkck.francecentral-01.azurewebsites.net/predict'
+PREDICT_API_URL = 'https://projet9backend-5dd2f3de943c.herokuapp.com/predict'
 
 # Input dimensions expected by your Keras model
 MODEL_INPUT_WIDTH = 1024
