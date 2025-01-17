@@ -14,7 +14,7 @@
 
         <ul class="pres">
         {% for image_name in image_pres_names %}
-            <li id="image-{{ loop.index }}">
+            <li id="img-{{ loop.index }}">
                 <img src="{{ url_for('serve_image', image_type='pres', filename=image_name) }}" alt="Image">
             </li>
         {% endfor %}
@@ -23,7 +23,7 @@
 
        <ul class="pres">
         {% for image_name in image_pres_mask_names %}
-            <li id="image-{{ loop.index }}">
+            <li id="img-{{ loop.index }}">
                 <img src="{{ url_for('serve_image', image_type='pres_mask', filename=image_name) }}" alt="Image">
             </li>
         {% endfor %}

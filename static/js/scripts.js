@@ -20,29 +20,10 @@ function highlightImage(index) {
 
 
 // Activer le premier élément au lancement de la page
-//document.addEventListener('DOMContentLoaded', () => {
-//    highlightImage(1);
-//});
-
-// Fonction pour tester la mise en surbrillance
-function testHighlight() {
-    const imageElement = document.getElementById('image-1');
-    if (imageElement) {
-        console.log('Testing highlight on image with ID:', imageElement.id);
-        imageElement.classList.add('highlight');
-        setTimeout(() => {
-            imageElement.classList.remove('highlight');
-        }, 2000);
-    } else {
-        console.error('Image element not found for ID: image-1');
-    }
-}
-
-
-// Activer le test au lancement de la page
 document.addEventListener('DOMContentLoaded', () => {
-testHighlight();
+    highlightImage(1);
 });
+
 
 function submitForm(index) {
     const imageElement = document.getElementById('image-' + index).querySelector('img');
