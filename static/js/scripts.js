@@ -34,7 +34,7 @@ if (imageElement) {
 } else {
     console.error('Image element not found for ID: image-1');
 }
-}
+
 
 // Activer le test au lancement de la page
 document.addEventListener('DOMContentLoaded', () => {
